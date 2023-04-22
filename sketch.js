@@ -38,9 +38,9 @@ function draw() {
   background(0)
   stroke(255)
 
-  // if (mouseIsPressed && 0<mouseX<400 && 0<mouseY<400) {
-    if (mouseX<canvasX && mouseY<canvasY) {
-      // console.log(mouseX, mouseY)
+
+  if (mouseX<canvasX && mouseY<canvasY) {
+    // console.log(mouseX, mouseY)
     if (pointsX[num]-20<mouseX<pointsX[num]+20, pointsY[num]-20<mouseY<pointsY[num]+20) {
       pointsX[num] = mouseX 
       pointsY[num] = mouseY
@@ -52,21 +52,6 @@ function draw() {
     // console.log(dist)
     // console.log(defaultDist)
     if (dist > defaultDist) {
-
-      // speed = 5
-      // if (pointsX[i - 1] < [pointsX[i]]) {
-      //   pointsX[i - 1]+=speed
-      // }
-      // if (pointsX[i - 1] > [pointsX[i]]) {
-      //   pointsX[i - 1]-=speed
-      // }
-      // if (pointsY[i - 1] < [pointsY[i]]) {
-      //   pointsY[i - 1]+=speed
-      // }
-      // if (pointsY[i - 1] > [pointsY[i]]) {
-      //   pointsY[i - 1]-=speed
-      // }
-
       speedDivisor = 1.5
       speedX = distX/speedDivisor
       speedY = distY/speedDivisor
