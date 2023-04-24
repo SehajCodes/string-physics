@@ -39,7 +39,7 @@ function draw() {
   stroke(255)
 
 
-  if (mouseX<canvasX && mouseY<canvasY) {
+  if (mouseX<canvasX && mouseY<canvasY && mouseX>0 && mouseY>0) {
     // console.log(mouseX, mouseY)
     if (pointsX[num]-20<mouseX<pointsX[num]+20, pointsY[num]-20<mouseY<pointsY[num]+20) {
       pointsX[num] = mouseX 
