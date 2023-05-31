@@ -46,29 +46,24 @@ function draw() {
       pointsY[num] = mouseY
     }
   }
-
+// totalDist=0
   for (i = num; i > 0; i--) {
     distFunc(i, i - 1)
     // console.log(dist)
     // console.log(defaultDist)
     if (dist > defaultDist) {
-      speedDivisor = 1.5
-      speedX = distX/speedDivisor
-      speedY = distY/speedDivisor
-      if (pointsX[i - 1] < [pointsX[i]]) {
+      ratio = 1-(defaultDist/dist)
+      // speedDivisor = 1.5
+      speedX = distX*ratio
+      speedY = distY*ratio
         pointsX[i - 1]+=speedX
-      }
-      if (pointsX[i - 1] > [pointsX[i]]) {
-        pointsX[i - 1]+=speedX
-      }
-      if (pointsY[i - 1] < [pointsY[i]]) {
         pointsY[i - 1]+=speedY
-      }
-      if (pointsY[i - 1] > [pointsY[i]]) {
-        pointsY[i - 1]+=speedY
-      }
     }
+    distFunc(i, i - 1)
+    // totalDist+=dist
   }
+  // console.clear()
+  // console.log(totalDist)
 
   for (let i = 0; i < num; i++) {
       line(pointsX[i], pointsY[i], pointsX[i+1], pointsY[i+1])
